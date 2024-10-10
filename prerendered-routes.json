@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/about",
+    "/cart",
+    "/checkout",
+    "/contact",
+    "/home",
+    "/menu",
+    "/orders"
+  ]
+}

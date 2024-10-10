@@ -1,0 +1,175 @@
+
+  <div class="text-center menu-heading">
+    <h4>
+      <span><strong>Check Our </strong></span>
+      <span class="text-orange"><strong>Farm to Fork Menu</strong></span>
+    </h4>
+  </div>
+
+  <div class="container">
+
+    <div class="text-center">
+      <h4 class="menu-subtitle">Menu</h4>
+      <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <li class="nav-item">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+            <h4>Starters</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-mainCourses">
+            <h4>Main Courses</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-sides">
+            <h4>Sides</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-desserts">
+            <h4>Desserts</h4>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-beverages">
+            <h4>Beverages</h4>
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content mt-3">
+
+        <div class="tab-pane fade show active" id="menu-starters">
+          <div class="row">
+            <div *ngFor="let item of starters" class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm menu-card">
+                <div class="card-body d-flex flex-column text-center">
+                  <img [src]="item.image" alt="{{ item.name }}" class="card-img-top"
+                    style="width: 100%; height: 200px; object-fit: cover;" />
+                  <h4 class="card-title mt-3">{{ item.name }}</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ item.notes }}</h6>
+                  <div class="row mt-auto">
+                    <div class="col">
+                      <a [routerLink]="['/details', item.id]" class="btn btn-orange me-3">Details</a>
+                    </div>
+                    <div class="col text-orange text-end">
+                      <h4 class="price">${{ item.price }}</h4>
+                    </div>
+                    <div class="col">
+                      <i (click)="addToCart(item)" class="bi bi-cart3" style="color:#FF7F50; font-size: 22px;" aria-label="Add to cart"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="menu-mainCourses">
+          <div class="row">
+            <div *ngFor="let item of mainCourses" class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm menu-card">
+                <div class="card-body d-flex flex-column text-center">
+                  <img [src]="item.image" alt="{{ item.name }}" class="card-img-top"
+                    style="width: 100%; height: 200px; object-fit: cover;" />
+                  <h4 class="card-title mt-3">{{ item.name }}</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ item.notes }}</h6>
+                  <div class="row mt-auto">
+                    <div class="col">
+                      <a [routerLink]="['/details', item.id]" class="btn btn-orange me-3">Details</a>
+                    </div>
+                    <div class="col text-orange text-end">
+                      <h4 class="price">${{ item.price }}</h4>
+                    </div>
+                    <div class="col">
+                      <i (click)="addToCart(item)" class="bi bi-cart3" style="color:#FF7F50;  font-size: 22px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="menu-sides">
+          <div class="row">
+            <div *ngFor="let item of sides" class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm menu-card">
+                <div class="card-body d-flex flex-column text-center">
+                  <img [src]="item.image" alt="{{ item.name }}" class="card-img-top"
+                    style="width: 100%; height: 200px; object-fit: cover;" />
+                  <h4 class="card-title mt-3">{{ item.name }}</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ item.notes }}</h6>
+                  <div class="row mt-auto">
+                    <div class="col">
+                      <a [routerLink]="['/details', item.id]" class="btn btn-orange me-3">Details</a>
+                    </div>
+                    <div class="col text-orange text-end">
+                      <h4 class="price">${{ item.price }}</h4>
+                    </div>
+                    <div class="col">
+                      <i (click)="addToCart(item)" class="bi bi-cart3" style="color:#FF7F50;  font-size: 22px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="menu-desserts">
+          <div class="row">
+            <div *ngFor="let item of desserts" class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm menu-card">
+                <div class="card-body d-flex flex-column text-center">
+                  <img [src]="item.image" alt="{{ item.name }}" class="card-img-top"
+                    style="width: 100%; height: 200px; object-fit: cover;" />
+                  <h4 class="card-title mt-3">{{ item.name }}</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ item.notes }}</h6>
+                  <div class="row mt-auto">
+                    <div class="col">
+                      <a [routerLink]="['/details', item.id]" class="btn btn-orange me-3">Details</a>
+                    </div>
+                    <div class="col text-orange text-end">
+                      <h4 class="price">${{ item.price }}</h4>
+                    </div>
+                    <div class="col">
+                      <i (click)="addToCart(item)" class="bi bi-cart3" style="color:#FF7F50;  font-size: 22px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="menu-beverages">
+          <div class="row">
+            <div *ngFor="let item of beverages" class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm menu-card">
+                <div class="card-body d-flex flex-column text-center">
+                  <img [src]="item.image" alt="{{ item.name }}" class="card-img-top"
+                    style="width: 100%; height: 200px; object-fit: cover;" />
+                  <h4 class="card-title mt-3">{{ item.name }}</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ item.notes }}</h6>
+                  <div class="row mt-auto">
+                    <div class="col">
+                      <a [routerLink]="['/details', item.id]" class="btn btn-orange me-3">Details</a>
+                    </div>
+                    <div class="col text-orange text-end">
+                      <h4 class="price">${{ item.price }}</h4>
+                    </div>
+                    <div class="col">
+                      <i (click)="addToCart(item)" class="bi bi-cart3" style="color:#FF7F50;  font-size: 22px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>

@@ -1,0 +1,14 @@
+/* checkout.component.css */
+.checkout {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .cart-summary {
+    margin-top: 20px;
+  }
+  

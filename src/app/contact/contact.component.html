@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="text-orange"><strong>Get in Touch</strong></h2>
+        <p class="text-muted">Have any questions or feedback? Feel free to reach out to us through the form below, or visit us at our restaurant located at [Address]. We’d love to hear from you!</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <form (ngSubmit)="sendMessage()">
+                <div class="mb-3">
+                    <label for="yourName" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="yourName" [(ngModel)]="userName" name="userName" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="yourMessage" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="yourMessage" [(ngModel)]="userMessage" name="userMessage" rows="4" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-orange">Send Message</button>
+            </form>
+    
+        </div>
+    </div>
+    <div class="mt-5">
+        <h4>Location</h4>
+        <p>You can find us at <strong>3315 Farm to Fork Street, Jeddah</strong>. We’re open Sunday through Thuesday from 11 AM to 10 PM.</p>
+    </div>
+</div>
+

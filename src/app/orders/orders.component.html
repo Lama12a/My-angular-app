@@ -1,0 +1,41 @@
+<div class="orders container mt-5">
+    <h2 class="text-center text-orange mb-4"><strong>Your Orders</strong></h2>
+
+    <div class="card">
+        <div class="card-body">
+            <div *ngIf="pastOrders.length > 0; else noOrders">
+                <div *ngFor="let order of pastOrders" class="order-summary mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0"><strong>Order ID:</strong> {{ order.id }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Name:</strong> {{ order.user.name }}</p>
+                            <p><strong>Address:</strong> {{ order.user.address }}</p>
+
+                            <h6 class="mb-3 text-muted">Items Ordered:</h6>
+                            <ul class="list-group mb-3">
+                                <li *ngFor="let item of order.items" class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+
+                                        <img [src]="item.image" alt="{{ item.name }}" class="img-fluid me-2" style="width: 40px; height: 40px;">
+                                        <span>{{ item.name }} - ${{ item.price }} x {{ item.quantity }}</span>
+                                    </div>
+                                    <span class="badge bg-orange rounded-pill">Total: ${{ (item.price * item.quantity).toFixed(2) }}</span>
+                                </li>
+                            </ul>
+
+                            <h5 class="text-end"><strong>Total Price:</strong> ${{ order.totalPrice }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noOrders>
+        <div class="alert alert-warning text-center" role="alert">
+            <strong>No Orders Found!</strong> You have no past orders.
+        </div>
+    </ng-template>
+</div>
